@@ -44,6 +44,12 @@
   vars:
     sudo: yes
 
+- include: firewall.yml
+  tags: [postgresql, postgresql-databases]
+  sudo: yes
+  vars:
+    sudo: yes
+
 - include: users_privileges.yml
   tags: [postgresql, postgresql-users]
   sudo: yes

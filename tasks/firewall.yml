@@ -1,0 +1,4 @@
+---
+- firewalld: service=postgresql permanent=true state=enabled zone=public
+  notify: [ "firewalld" ]
+
