@@ -16,7 +16,6 @@
   yum:
     name: "{{ item }}"
     state: present
-    update_cache: yes
   with_items: ["python-psycopg2", "python-pycurl", "glibc-common"]
 
 - name: PostgreSQL | Install PostgreSQL
