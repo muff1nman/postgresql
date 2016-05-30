@@ -9,40 +9,22 @@
 - include: install.yml
   when: ansible_pkg_mgr == "apt"
   tags: [postgresql, postgresql-install]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: install_yum.yml
   when: ansible_pkg_mgr == "yum"
   tags: [postgresql, postgresql-install]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: extensions.yml
   tags: [postgresql, postgresql-extensions]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: configure.yml
   tags: [postgresql, postgresql-configure]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: users.yml
   tags: [postgresql, postgresql-users]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: databases.yml
   tags: [postgresql, postgresql-databases]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: firewall.yml
   tags: [postgresql, postgresql-databases]
@@ -52,13 +34,7 @@
 
 - include: users_privileges.yml
   tags: [postgresql, postgresql-users]
-  sudo: yes
-  vars:
-    sudo: yes
 
 - include: monit.yml
   when: monit_protection is defined and monit_protection == true
   tags: [postgresql, postgresql-monit]
-  sudo: yes
-  vars:
-    sudo: yes
